@@ -1,8 +1,6 @@
 import http.server, os
 import urllib, uuid
 
-valid_pages = ['login', 'history']
-
 
 class Handler(http.server.BaseHTTPRequestHandler):
     def _set_headers(self, type, response_code=200):
@@ -178,6 +176,7 @@ class Handler(http.server.BaseHTTPRequestHandler):
         else:
             self.respond_login_bad()
             return False
+
 
 try:
     port = int(os.environ["PORT"])
